@@ -6,14 +6,14 @@
 (defn- any? [pred coll]
   (not= nil (some pred coll)))
 
-(defn- at-least-one-upper-case-char-in? [password]
-  (any? #(Character/isUpperCase %) password))
+(def ^:private at-least-one-upper-case-char-in?
+  (partial any? #(Character/isUpperCase %)))
 
-(defn- at-least-one-lower-case-char-in? [password]
-  (any? #(Character/isLowerCase %) password))
+(def ^:private at-least-one-lower-case-char-in?
+  (partial any? #(Character/isLowerCase %)))
 
-(defn- at-least-one-underscore-char-in? [password]
-  (any? #{\_} password))
+(def ^:private at-least-one-underscore-char-in?
+  (partial any? #{\_}))
 
 (defn valid? [password]
   (and (more-than-6-chars-in? password)
