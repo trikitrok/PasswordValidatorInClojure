@@ -25,5 +25,10 @@
   (fact
     "it rejects passwords that do not contain 
     at least one underscore character"
-    (valid? "aAB3CCC") => false))
+    (valid? "aAB3CCC") => false)
+  
+  (fact 
+    "it rejects passwords that do not contain 
+    at least one numeric character"
+    (valid? "_Abcccc") => false))
 
