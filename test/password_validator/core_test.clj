@@ -13,12 +13,17 @@
     (valid? "_Ab3cc") => false)
   
   (fact
-    "it rejects passwords that does not contain 
+    "it rejects passwords that do not contain 
     at least one upper case character"
     (valid? "_ab3ccc") => false)
   
   (fact
-    "it rejects passwords that does not contain 
+    "it rejects passwords that do not contain 
     at least one lower case character"
-    (valid? "_AB3CCC") => false))
+    (valid? "_AB3CCC") => false)
+  
+  (fact
+    "it rejects passwords that do not contain 
+    at least one underscore character"
+    (valid? "aAB3CCC") => false))
 
