@@ -18,9 +18,12 @@
 (def ^:private at-least-one-numeric-char-in?
   (partial any? #(Character/isDigit %)))
 
+(def ^:private conditions-to-be-valid 
+  [more-than-6-chars-in?
+   at-least-one-upper-case-char-in? 
+   at-least-one-lower-case-char-in?
+   at-least-one-underscore-char-in?
+   at-least-one-numeric-char-in?])
+
 (defn valid? [password]
-  (and (more-than-6-chars-in? password)
-       (at-least-one-upper-case-char-in? password)
-       (at-least-one-lower-case-char-in? password)
-       (at-least-one-underscore-char-in? password)
-       (at-least-one-numeric-char-in? password)))
+  (every? #(% password) conditions-to-be-valid))
