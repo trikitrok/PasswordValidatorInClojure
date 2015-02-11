@@ -6,4 +6,8 @@
   "about password validator"
   (fact 
     "it accepts a valid password"
-    (valid? "_Ab3ccc") => true))
+    (valid? "_Ab3ccc") => true)
+  
+  (fact 
+    "it rejects passwords with no more than 6 characters"
+    (valid? "_Ab3cc") => false))
