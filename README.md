@@ -1,4 +1,4 @@
-# kata Password Validator
+# Password Validator kata
 =======================
 
 * A password should have more than 6 chars
