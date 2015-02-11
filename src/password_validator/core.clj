@@ -4,4 +4,5 @@
   (> (count password) 6))
 
 (defn valid? [password]
-  (with-more-than-6-chars? password))
+  (and (with-more-than-6-chars? password)
+       (not= nil (some #(Character/isUpperCase %) password))))

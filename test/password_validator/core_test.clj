@@ -10,4 +10,9 @@
   
   (fact 
     "it rejects passwords with no more than 6 characters"
-    (valid? "_Ab3cc") => false))
+    (valid? "_Ab3cc") => false)
+  
+  (fact
+    "it rejects passwords that does not contain 
+    at least on uppercase character"
+    (valid? "_ab3ccc") => false))

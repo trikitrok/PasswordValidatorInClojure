@@ -1,0 +1,4 @@
+(some #(Character/isUpperCase %) "_ab3ccc")
+(some #(Character/isUpperCase %) "_ab3cCc")
+(not= nil (some #(Character/isUpperCase %) "_ab3cCc"))
+(not= nil (some #(Character/isUpperCase %) "_ab3ccc"))
