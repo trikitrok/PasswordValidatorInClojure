@@ -1,4 +1,7 @@
 (ns password-validator.core)
 
-(defn valid? [password]
+(defn- with-more-than-6-chars? [password]
   (> (count password) 6))
+
+(defn valid? [password]
+  (with-more-than-6-chars? password))
