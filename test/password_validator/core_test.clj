@@ -14,5 +14,5 @@
   
   (fact
     "it rejects passwords that does not contain 
-    at least on uppercase character"
+    at least one uppercase character"
     (valid? "_ab3ccc") => false))
