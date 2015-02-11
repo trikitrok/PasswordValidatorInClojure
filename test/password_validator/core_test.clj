@@ -14,5 +14,11 @@
   
   (fact
     "it rejects passwords that does not contain 
-    at least one uppercase character"
-    (valid? "_ab3ccc") => false))
+    at least one upper case character"
+    (valid? "_ab3ccc") => false)
+  
+  (fact
+    "it rejects passwords that does not contain 
+    at least one lower case character"
+    (valid? "_AB3CCC") => false))
+
